@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/css/common.css}">
+    <link rel="stylesheet" th:href="@{/css/top.css}">
+</head>
+<body>
+    <div id="top_title" >欢迎来到QQZone！</div>
+    <div id="top_link_div" >
+        <span th:text="|欢迎进入${session.friend.nickName}的空间|">欢迎进入Jim的空间！</span>
+        <!--
+        判断进入的是否是自己的空间的依据是
+        userbasic和friend中的userbasic是否相同
+        -->
+        <span th:if="${session.userbasic.id!=session.friend.id}">
+            <a th:href="@{|/user.do?operate=friend&id=${session.userbasic.id}|}" target="_top">返回自己的空间!</a>
+        </span>
+    </div>
+</body>
+</html>
