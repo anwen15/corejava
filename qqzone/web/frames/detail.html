@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -24,33 +24,34 @@
                 <tr>
                     <td rowspan="2" class="w14 h96">
                         <div class="h64 center " style="width:100%;">
-                            <img class="img56 " th:src="@{/imgs/qf.png}"/>
+                            <img class="img56 " th:src="@{|/imgs/${session.topic.author.headImg}|}"/>
                         </div>
-                        <div class="h32 center" style="width:100%;">乔峰</div>
+                        <div class="h32 center" style="width:100%;" th:text="${session.topic.author.nickName}">乔峰</div>
                     </td>
                     <td class="topic_title" onmousemove="showDelImg('img01')" onmouseout="hiddenDelImg('img01')">
                         <img id="img01" style="float: right;margin-top:2px;margin-right:2px;display: none;width:24px;height: 24px;" th:src="@{/imgs/del.jpg}"/>
-                        <span>《萧某今天就和天下群雄决一死战，你们一起上吧！》</span>
+                        <span th:text="${session.topic.title}">《萧某今天就和天下群雄决一死战，你们一起上吧！》</span>
                         <span class="title_date_right">2021-09-01 12:30:55</span>
                     </td>
                 </tr>
                 <tr>
-                    <td>杀母大仇, 岂可当作买卖交易？此仇能报便报, 如不能报, 则我父子毕命于此便了。这等肮脏之事, 岂是我萧氏父子所屑为？</td>
+                    <td th:text="${session.topic.content}">杀母大仇, 岂可当作买卖交易？此仇能报便报, 如不能报, 则我父子毕命于此便了。这等肮脏之事, 岂是我萧氏父子所屑为？</td>
                 </tr>
             </table>
         </div>
         <div id="div_reply_list">
-            <table class="tbl_reply_info">
+            <table class="tbl_reply_info" th:each="reply : ${session.topic.replyList}">
                 <tr>
                     <td rowspan="2" class="w14 h88">
                         <div class="h56 center" style="width:100%;">
-                            <img class="img48" src="../imgs/dy.png"/>
+                            headimg: <span th:text="${reply.author.headImg}"></span><br/>
+                            <img class="img48" th:src="@{|/imgs/${reply.author.headImg}|}"/>
                         </div>
-                        <div class="h32 center" style="width:100%;">段誉</div>
+                        <div class="h32 center" style="width:100%;" th:text="${reply.author.nickName}">段誉</div>
                     </td>
                     <td class="reply_title" onmouseover="showDelImg('img02')" onmouseout="hiddenDelImg('img02')">
-                        <span>回复：萧某今天就和天下群雄决一死战，你们一起上吧！</span>
-                        <img id="img02" style="float: right;margin-top:2px;margin-right:2px;display: none;width:24px;height: 24px;" src="../imgs/del.jpg" />
+                        <span>回复：今天就和天下群雄决一死战，你们一起上吧！</span>
+                        <img id="img02" style="float: right;margin-top:2px;margin-right:2px;display: none;width:24px;height: 24px;" th:src="@{/imgs/del.jpg}" />
                         <span class="title_date_right">2021-09-01 14:35:15</span>
                     </td>
                 </tr>
@@ -68,7 +69,7 @@
                 <tr>
                     <td rowspan="2" class="w14 h88">
                         <div class="h56 center" style="width:100%;">
-                            <img class="img48" src="../imgs/mrf.png"/>
+                            <img class="img48" src="../imgs/h3.jpeg"/>
                         </div>
                         <div class="h32 center" style="width:100%;">慕容复</div>
                     </td>
@@ -90,7 +91,7 @@
                 <tr>
                     <td rowspan="2" class="w14 h88">
                         <div class="h56 center" style="width:100%;">
-                            <img class="img48" src="../imgs/zl.png"/>
+                            <img class="img48" src="../imgs/h5.jpeg"/>
                         </div>
                         <div class="h32 center" style="width:100%;">钟灵</div>
                     </td>
@@ -107,7 +108,7 @@
                 <tr>
                     <td rowspan="2" class="w14 h88">
                         <div class="h56 center" style="width:100%;">
-                            <img class="img48" src="../imgs/wyy.png"/>
+                            <img class="img48" src="../imgs/h4.jpeg"/>
                         </div>
                         <div class="h32 center" style="width:100%;">王语嫣</div>
                     </td>

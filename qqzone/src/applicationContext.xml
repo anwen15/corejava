@@ -24,10 +24,12 @@
         <bean id="replyservice" class="com.qqzone.service.impl.replyserviceimpl">
                 <property name="replydao" ref="replydao"/>
                 <property name="hostreplyservice" ref="hostreplyservice"/>
+                <property name="userbasicservice" ref="userbasicservice"/>
         </bean>
         <bean id="topicservice" class="com.qqzone.service.impl.topicserviceimpl">
                 <property name="topicdao" ref="topicdao"/>
                 <property name="replyservice" ref="replyservice"/>
+                <property name="userbasicservice" ref="userbasicservice"/>
         </bean>
         <bean id="user" class="com.qqzone.controller.usercontroller">
                 <property name="userbasicservice" ref="userbasicservice"/>

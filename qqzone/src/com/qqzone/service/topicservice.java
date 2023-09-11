@@ -10,4 +10,6 @@ public interface topicservice {
     List<topic> getyopiclist(userbasic userbasic);
 
     topic gettopicbyid(Integer id );
+
+    topic gettopic(Integer id);
 }
