@@ -30,6 +30,13 @@ public class reply {
         this.content = content;
     }
 
+    public reply(String content, Date replyDate, userbasic author, topic topic) {
+        this.content = content;
+        this.replyDate = replyDate;
+        this.author = author;
+        this.topic = topic;
+    }
+
     public Date getReplyDate() {
         return replyDate;
     }

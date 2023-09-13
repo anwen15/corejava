@@ -31,6 +31,9 @@
                 <property name="replyservice" ref="replyservice"/>
                 <property name="userbasicservice" ref="userbasicservice"/>
         </bean>
+        <bean id="reply" class="com.qqzone.controller.replycontroller">
+                <property name="replyservice" ref="replyservice"/>
+        </bean>
         <bean id="user" class="com.qqzone.controller.usercontroller">
                 <property name="userbasicservice" ref="userbasicservice"/>
                 <property name="topicservice" ref="topicservice"/>

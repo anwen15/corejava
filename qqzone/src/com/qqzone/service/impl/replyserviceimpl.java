@@ -27,4 +27,14 @@ public class replyserviceimpl implements replyservice {
         }
         return replyList;
     }
+
+    @Override
+    public void addreply(reply reply) {
+        replydao.addreply(reply);
+    }
+
+    @Override
+    public void delreply(Integer replyid) {
+
+    }
 }
