@@ -7,6 +7,11 @@ import com.qqzone.pojo.hostreply;
 public class hostreplydaoimpl extends BaseDAO<hostreply> implements hostreplydao {
     @Override
     public hostreply gethostreplybyreplyid(Integer replyid) {
-        return load("select * from t_host_reply where reply=?",replyid);
+        return load("select * from t_host_reply where reply=?", replyid);
+    }
+
+    @Override
+    public void delhostreply(Integer id) {
+        executeQuery("delete from t_host_reply where id=?",id);
     }
 }

@@ -17,8 +17,8 @@ public class replycontroller {
         replyservice.addreply(reply);
         return "redirect:topic.do?operate=topicdetail&id="+topicid;
     }
-    public String delReply(Integer replyId , Integer topicId){
+    public String delreply(Integer replyId , Integer topicId){
         replyservice.delreply(replyId);
-        return "redirect:topic.do?operate=topicDetail&id="+topicId;
+        return "redirect:topic.do?operate=topicdetail&id="+topicId;
     }
 }

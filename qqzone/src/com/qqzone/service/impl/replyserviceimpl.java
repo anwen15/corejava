@@ -35,6 +35,13 @@ public class replyserviceimpl implements replyservice {
 
     @Override
     public void delreply(Integer replyid) {
-
+        reply reply = replydao.getreply(replyid);
+        if(reply!=null){
+            hostreply hostreply = hostreplyservice.gethostreplbyreplyid(reply.getId());
+            if (hostreply!=null){
+                hostreplyservice.delhostreply(hostreply.getId());
+            }
+        }
+        replydao.delreply(replyid);
     }
 }

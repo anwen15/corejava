@@ -6,9 +6,15 @@ import com.qqzone.service.hostreplyservice;
 
 public class hostreplyserviceimpl implements hostreplyservice {
     private hostreplydao hostreplydao;
+
     @Override
     public hostreply gethostreplbyreplyid(Integer replyid) {
         return hostreplydao.gethostreplybyreplyid(replyid);
+    }
+
+    @Override
+    public void delhostreply(Integer hostreplyid) {
+        hostreplydao.delhostreply(hostreplyid);
     }
 
 }
