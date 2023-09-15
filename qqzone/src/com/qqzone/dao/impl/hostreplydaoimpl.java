@@ -12,6 +12,6 @@ public class hostreplydaoimpl extends BaseDAO<hostreply> implements hostreplydao
 
     @Override
     public void delhostreply(Integer id) {
-        executeQuery("delete from t_host_reply where id=?",id);
+        executeUpdate("delete from t_host_reply where id=?",id);
     }
 }

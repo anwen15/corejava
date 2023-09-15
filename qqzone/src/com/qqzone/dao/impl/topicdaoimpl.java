@@ -20,7 +20,7 @@ public class topicdaoimpl extends BaseDAO<topic> implements topicdao {
 
     @Override
     public void deltopic(topic topic) {
-
+        executeUpdate("delete from t_topic where id = ? " , topic.getId());
     }
 
     @Override

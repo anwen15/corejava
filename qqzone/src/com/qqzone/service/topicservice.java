@@ -12,4 +12,6 @@ public interface topicservice {
     topic gettopicbyid(Integer id );
 
     topic gettopic(Integer id);
+
+    void deltopic(Integer id);
 }

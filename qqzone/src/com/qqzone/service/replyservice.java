@@ -11,4 +11,5 @@ public interface replyservice {
     void addreply(reply reply);
     void delreply(Integer replyid);
 
+    void getreplybytopic(Integer topicid);
 }

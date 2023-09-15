@@ -27,4 +27,9 @@ public class replydaoimpl extends BaseDAO<reply> implements replydao {
     public reply getreply(Integer id) {
         return load("select * from t_reply where id =? ",id );
     }
+
+    @Override
+    public reply getreplybytopicid(Integer id) {
+        return load("select * from t_reply where topic=?",id);
+    }
 }

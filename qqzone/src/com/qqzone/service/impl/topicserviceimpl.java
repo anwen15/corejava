@@ -31,6 +31,18 @@ public class topicserviceimpl implements topicservice {
     }
 
     @Override
+    public void deltopic(Integer id) {
+        List<reply> replyList = replyservice.getreplybytopicid(id);
+        if(replyList!=null) {
+            for (int i = 0; i < replyList.size(); i++) {
+                reply reply = replyList.get(i);
+                replyservice.delreply(reply.getId());
+            }
+        }
+        topicdao.deltopic(new topic(id));
+    }
+
+    @Override
     public topic gettopicbyid(Integer id) {
         topic topic=gettopic(id);
         List<reply> replyList = replyservice.getreplybytopicid(topic.getId());

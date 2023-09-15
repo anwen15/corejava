@@ -5,6 +5,12 @@
 	<title>Title</title>
 	<link rel="stylesheet" th:href="@{/css/common.css}">
 	<link rel="stylesheet" th:href="@{/css/main.css}">
+	<script language="JavaScript">
+		function deltopic(topicid){
+			if (window.confirm("是否删除")){}
+			window.location.href="topic.do?operate=deltopic&topicid="+topicid;
+		}
+	</script>
 </head>
 <body>
 <div id="div_topic_list">
@@ -25,7 +31,7 @@
 			<td th:text="${topic.id}">1</td>
 			<td class="left"><a th:href="@{|/topic.do?operate=topicdetail&id=${topic.id}|}" th:text="${topic.title}">我爱中华</a></td>
 			<td th:text="${topic.topicDate}">2022-04-27 20:34:11</td>
-			<td>删除</td>
+			<td><input type="button" value="删除" th:if="${session.userbasic.id==session.friend.id}" th:onclick="|deltopic(${topic.id})|"/></td>
 		</tr>
 	</table>
 </div>

@@ -44,4 +44,9 @@ public class replyserviceimpl implements replyservice {
         }
         replydao.delreply(replyid);
     }
+
+    @Override
+    public void getreplybytopic(Integer topicid) {
+        replydao.getreplybytopicid(topicid);
+    }
 }

@@ -17,4 +17,6 @@ public interface replydao {
 
     //获取reply
     reply getreply(Integer id);
+
+    reply getreplybytopicid(Integer id);
 }
